@@ -1,13 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<div class="container">
-<a class="navbar-brand" routerLink="/">My Portfolio</a>
-<div class="collapse navbar-collapse">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a routerLink="/" class="nav-link">Home</a></li>
-<li class="nav-item"><a routerLink="/about" class="nav-link">About</a></li>
-<li class="nav-item"><a routerLink="/projects" class="nav-link">Projects</a></li>
-<li class="nav-item"><a routerLink="/contact" class="nav-link">Contact</a></li>
-</ul>
-</div>
-</div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark transition-all" 
+     [class.bg-dark]="isScrolled" 
+     [class.bg-transparent]="!isScrolled && isMenuCollapsed"
+     [class.shadow]="isScrolled">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#home" (click)="closeMenu()">
+      <i class="bi bi-code-slash text-primary me-2"></i>Wyne
+    </a>
+    
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+        <li class="nav-item"><a class="nav-link" href="#home" (click)="closeMenu()">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" (click)="closeMenu()">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects" (click)="closeMenu()">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" (click)="closeMenu()">Contact</a></li>
+      </ul>
+      <div class="text-center">
+          <a href="#contact" class="btn btn-primary ms-lg-3 px-4 rounded-pill" (click)="closeMenu()">Hire Me</a>
+      </div>
+    </div>
+  </div>
 </nav>
