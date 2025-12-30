@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+/* =========================================
+   THEME VARIABLES (Dark Mode is Default)
+   ========================================= */
+:root {
+  /* Default Dark Theme Colors */
+  --bg-color: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --bg-secondary: #1a1a1a; /* Dark gray for cards/about section */
+  --text-color: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --navbar-bg: rgba(0, 0, 0, 0.9);
+  --card-bg: #212529;
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+  --bg-color: #ffffff;       /* Pure White Background */
+  --bg-secondary: #f8f9fa;   /* Light gray for sections */
+  --text-color: #212529;     /* Dark Text */
+  --text-muted: #6c757d;
+  --navbar-bg: #ffffff;
+  --card-bg: #ffffff;
+}
+
+/* =========================================
+   APPLY VARIABLES TO ELEMENTS
+   ========================================= */
+
+/* Apply the main background to the whole body */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Fix Text Colors Globally */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color) !important;
+}
+
+p, small, .lead {
+  color: var(--text-muted) !important;
+}
+
+/* Fix Cards */
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* Fix Navbar Background */
+.navbar.bg-dark {
+  background-color: var(--navbar-bg) !important;
+}
+
+/* Fix Navbar Links in Light Mode */
+body.light-theme .navbar-brand,
+body.light-theme .nav-link {
+  color: #000 !important;
+}
+body.light-theme .nav-link.active {
+  color: #0d6efd !important; /* Keep active blue */
+}
+body.light-theme .navbar-toggler-icon {
+  filter: invert(1); /* Make hamburger icon black */
+}
+
+
+/* 1. DEFAULT (DARK MODE) */
+/* Force all muted text to be Light Gray so it is visible on dark backgrounds */
+.text-muted {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* 2. LIGHT MODE OVERRIDE */
+/* When Light Theme is active, force muted text back to Dark Gray */
+body.light-theme .text-muted {
+  color: #6c757d !important;
+}

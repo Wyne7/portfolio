@@ -3,9 +3,10 @@
      [class.bg-transparent]="!isScrolled && isMenuCollapsed"
      [class.shadow]="isScrolled">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#home" (click)="closeMenu()">
-      <i class="bi bi-code-slash text-primary me-2"></i>Wyne
-    </a>
+    <a class="navbar-brand fw-bold" href="#home" (click)="scrollTo('home')">
+  <i class="bi bi-code-slash text-primary me-2"></i>
+  <span class="text-primary">Wyne</span>
+</a>
     
     <button class="navbar-toggler" type="button" (click)="toggleMenu()">
       <span class="navbar-toggler-icon"></span>
@@ -13,13 +14,18 @@
 
     <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-        <li class="nav-item"><a class="nav-link" href="#home" (click)="closeMenu()">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about" (click)="closeMenu()">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects" (click)="closeMenu()">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact" (click)="closeMenu()">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#home" [class.active]="activeSection === 'home'" (click)="scrollTo('home')">Home</a></li>
+         <li class="nav-item"><a class="nav-link" href="#projects" [class.active]="activeSection === 'projects'" (click)="scrollTo('projects')">Projects</a></li>
+         <li class="nav-item"><a class="nav-link" href="#contact" [class.active]="activeSection === 'contact'" (click)="scrollTo('contact')">Contact</a></li>
       </ul>
-      <div class="text-center">
-          <a href="#contact" class="btn btn-primary ms-lg-3 px-4 rounded-pill" (click)="closeMenu()">Hire Me</a>
+
+      <div class="d-flex align-items-center justify-content-center gap-3 ms-lg-3 mt-3 mt-lg-0">
+        
+        <button class="btn btn-link nav-link p-0" (click)="toggleTheme()" style="font-size: 1.2rem;">
+          <i class="bi" [class.bi-sun-fill]="isDarkMode" [class.bi-moon-stars-fill]="!isDarkMode"></i>
+        </button>
+
+        <a href="#contact" class="btn btn-primary px-4 rounded-pill" (click)="scrollTo('contact')">Hire Me</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,26 @@
+/* Ensure the image fits within the column */
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Nice shadow depth */
+  border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  
+  /* Optional: Floating Animation */
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Floating Animation Keyframes */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Adjustments for mobile to ensure image isn't too huge */
+@media (max-width: 991px) {
+  .hero-img {
+    max-width: 80%; /* Shrink image a bit on phones */
+    margin-top: 2rem;
+  }
+}
