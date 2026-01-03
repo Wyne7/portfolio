@@ -10,6 +10,11 @@
   animation: float 6s ease-in-out infinite;
 }
 
+.image-wrapper {
+  max-width: 420px;   /* CONTROL SIZE HERE */
+  margin: 0 auto;
+}
+
 /* Floating Animation Keyframes */
 @keyframes float {
   0% { transform: translateY(0px); }

@@ -33,22 +33,19 @@ export class NavbarComponent {
     this.isMenuCollapsed = true;
   }
 
-  @HostListener('window:scroll', [])
+
+@HostListener('window:scroll', [])
 onWindowScroll() {
   this.isScrolled = window.scrollY > 50;
 
-  // 1. Detect if we are at the bottom of the page
-  // standard way to check "bottom" in modern browsers
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 20) {
     this.activeSection = 'contact';
-    return; // Stop here, we found our section
+    return;
   }
 
-  // 2. Standard ScrollSpy Logic
-  const sections = ['home', 'projects', 'contact'];
+  // UPDATED: Added 'skills' and 'experience' to the array
+  const sections = ['home', 'skills', 'experience', 'projects', 'contact'];
   
-  // Increase offset to 150 or 200 to make it feel more natural
-  // (Detects the section when it takes up a bit more of the screen)
   const scrollPosition = window.scrollY + 150; 
 
   for(const section of sections){

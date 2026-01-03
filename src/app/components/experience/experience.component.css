@@ -1,0 +1,96 @@
+.experience-section {
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.section-title span {
+  color: #0d6efd;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  /* Line color uses your muted text variable for transparency */
+  border-left: 2px solid rgba(13, 110, 253, 0.3);
+  padding-left: 40px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* The glowing dot on the line */
+.timeline-dot {
+  position: absolute;
+  left: -49px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--bg-secondary);
+  border: 3px solid #0d6efd;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #0d6efd;
+  z-index: 2;
+}
+
+/* Experience Card using your style.css variables */
+.experience-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 25px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.experience-card:hover {
+  transform: translateX(10px);
+  border-color: #0d6efd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.duration-badge {
+  display: inline-block;
+  background-color: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.role-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.experience-desc {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Responsive adjustment for small phones */
+@media (max-width: 576px) {
+  .timeline {
+    padding-left: 25px;
+  }
+  .timeline-dot {
+    left: -34px;
+  }
+}
